@@ -14,7 +14,7 @@ export function CinematicResult({ result, onClose }: CinematicResultProps) {
     const [copied, setCopied] = useState(false)
 
     const handleCopy = () => {
-        const text = `AMBIGUITIES:\n${result.ambiguities.join('\n')}\n\nQUESTIONS:\n${result.questions.join('\n')}\n\nDATA SPEC:\n${result.dataSpec.map(s => `${s.column} (${s.type}): ${s.description}`).join('\n')}\n\nEMAIL:\n${result.emailDraft}`
+        const text = `AMBIGUITIES:\n${result.ambiguities.join('\n')}\n\nQUESTIONS:\n${result.questions.join('\n')}\n\nDATA SPEC:\n${result.dataSpec.map(s => `${s.name} (${s.type}): ${s.description}`).join('\n')}\n\nEMAIL:\n${result.emailDraft}`
         navigator.clipboard.writeText(text)
         setCopied(true)
         setTimeout(() => setCopied(false), 2000)
@@ -121,7 +121,7 @@ export function CinematicResult({ result, onClose }: CinematicResultProps) {
                                     <tbody>
                                         {result.dataSpec.map((spec, i) => (
                                             <tr key={i} className="border-b border-white/5">
-                                                <td className="py-2 px-3 text-indigo-300 font-mono">{spec.column}</td>
+                                                <td className="py-2 px-3 text-indigo-300 font-mono">{spec.name}</td>
                                                 <td className="py-2 px-3 text-slate-400">{spec.type}</td>
                                                 <td className="py-2 px-3 text-slate-300">{spec.description}</td>
                                             </tr>
