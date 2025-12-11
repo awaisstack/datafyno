@@ -3,7 +3,7 @@
 > **Built for SnowFest 2025**
 > By **Team Enlighteners**
 
-![Datafyno Banner](public/logo_placeholder.png)
+![Datafyno Banner](public/banner.png)
 
 ## 💡 Inspiration
 Every data analyst knows the pain. A notification pops up on Slack: _"Hey, can you pull the sales numbers for the last campaign?"_
@@ -28,42 +28,21 @@ Unlike standard chatbots that hallucinate an answer based on a guess, Datafyno i
 
 ## ⚙️ Architecture
 
-```mermaid
-graph TD
-    User[User / Analyst] -->|Vague Email/Request| UI[Next.js UI]
-    UI -->|API Route| Handler[API Handler]
-    Handler -->|System Prompt| Gemini[Google Gemini 2.0]
-    
-    subgraph AI_Logic [Ambiguity Core]
-        Gemini -->|Analyze| Detector{Ambiguity > 0?}
-        Detector -->|Yes| Draft[Draft Clarification Email]
-        Detector -->|No| Spec[Generate SQL Spec]
-    end
-    
-    Draft -->|JSON| UI
-    Spec -->|JSON| UI
-    
-    UI -->|Visual Feedback| User
-    
-    style User fill:#f9f,stroke:#333,stroke-width:2px
-    style UI fill:#bbf,stroke:#333,stroke-width:2px
-    style Gemini fill:#dfd,stroke:#333,stroke-width:2px
-    style Detector fill:#ffd,stroke:#333,stroke-width:4px
-```
+![Architecture](public/architecture.png)
 
 ## 👥 Team Enlighteners
 
 <table>
   <tr>
     <td align="center">
-      <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Awais&backgroundColor=b6e3f4" width="100px;" alt=""/>
+      <img src="public/team_awais.jpg" width="100px;" alt=""/>
       <br />
       <sub><b>Muhammad Awais</b></sub>
       <br />
       <small>Blockchain Analytics Engineer</small>
     </td>
     <td align="center">
-      <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Raffay&backgroundColor=c0aede" width="100px;" alt=""/>
+      <img src="public/team_raffay.png" width="100px;" alt=""/>
       <br />
       <sub><b>Abdul Raffay</b></sub>
       <br />
