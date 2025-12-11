@@ -18,11 +18,11 @@ Datafyno is the first **AI Ambiguity Detector** for data teams. It acts as a fir
 Unlike standard chatbots that hallucinate an answer based on a guess, Datafyno is programmed to **stop** when it detects missing context.
 
 1.  **It Analyzes:** It scans the request for missing dimensions (Time, Metric, Filter).
-2.  **It Detects Ambiguity:** It calculates an Ambiguity Score $$A$$ based on missing variables:
-    $$
-    A = \sum_{i=1}^{n} (w_i \cdot m_i)
-    $$
-    Where \(w\) is the weight of the missing metric (e.g., Date Range is high weight) and \(m\) is the missing variable.
+2.  **It Detects Ambiguity:** It calculates an Ambiguity Score (A) based on the sum of weighted missing variables:
+    
+    > **A = Σ (Weight × Missing_Variable)**
+    
+    *Where "Weight" is the importance of the missing metric (e.g., a missing 'Date Range' has a higher weight than a missing 'Region').*
 3.  **It Pushes Back:** If $$A > 0$$, it automatically drafts a polite, professional clarification email.
 4.  **It Solves:** Once clarified, it generates the perfect, clean SQL specification.
 
